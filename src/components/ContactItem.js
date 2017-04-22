@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import oc from 'open-color';
 import PropTypes from 'prop-types';
@@ -125,7 +125,7 @@ const Phone = styled.div`
 
 
 
-class ContactItem extends PureComponent {
+class ContactItem extends Component {
 
     static propTypes = {
         contact: PropTypes.shape({
