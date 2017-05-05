@@ -6,6 +6,8 @@ import Thumbnail from './Thumbnail';
 import StarIcon from 'react-icons/lib/md/star';
 import EditIcon from 'react-icons/lib/md/edit';
 
+import ImmutablePropTypes from 'react-immutable-proptypes';
+
 
 const Wrapper = styled.div`
     /* 레이아웃 */
@@ -128,7 +130,7 @@ const Phone = styled.div`
 class ContactItem extends Component {
 
     static propTypes = {
-        contact: PropTypes.shape({
+        contact: ImmutablePropTypes.mapContains({
             id: PropTypes.string,
             name: PropTypes.string,
             phone: PropTypes.string,
@@ -142,10 +144,12 @@ class ContactItem extends Component {
     render() {
         // 레퍼런스 준비
         const {
-            contact: { name, phone, favorite, id, color },
+            contact,
             onOpenModify,
             onToggleFavorite
         } = this.props;
+
+        const { name, phone, favorite, id, color } = contact.toJS();
 
         return (
             <Wrapper>

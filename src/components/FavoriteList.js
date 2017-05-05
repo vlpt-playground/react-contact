@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import FavoriteItem from './FavoriteItem';
 import PropTypes from 'prop-types';
+import ImmutablePropTypes from 'react-immutable-proptypes';
 
 const Wrapper = styled.div`
     /* 레이아웃 */
@@ -13,11 +14,11 @@ const Wrapper = styled.div`
 const FavoriteList = ({contacts}) => {
     const favoriteList = contacts
                         .filter( // 즐겨찾기 필터링
-                            contact => contact.favorite
+                            contact => contact.get('favorite')
                         ).map(
                             contact => (
                                 <FavoriteItem 
-                                    key={contact.id} 
+                                    key={contact.get('id')} 
                                     contact={contact}
                                 />
                             )
@@ -31,7 +32,15 @@ const FavoriteList = ({contacts}) => {
 };
 
 FavoriteList.propTypes = {
-    contacts: PropTypes.arrayOf(PropTypes.object)
+    contacts: ImmutablePropTypes.listOf(
+        ImmutablePropTypes.mapContains({
+            id: PropTypes.string,
+            name: PropTypes.string,
+            phone: PropTypes.string,
+            color: PropTypes.string,
+            favorite: PropTypes.bool
+        })
+    )
 };
 
 export default FavoriteList;
