@@ -5,18 +5,18 @@
   "dependencies": {
     "immutable": "^3.8.1",
     "open-color": "^1.5.1",
-    "prop-types": "^15.5.8",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-icons": "^2.2.3",
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-icons": "^2.2.7",
     "react-immutable-proptypes": "^2.1.0",
     "react-onclickoutside": "^5.11.1",
     "react-redux": "^5.0.4",
-    "react-transition-group": "^1.1.1",
+    "react-transition-group": "1.2.1",
     "redux": "^3.6.0",
     "redux-actions": "^2.0.2",
     "shortid": "^2.2.8",
-    "styled-components": "^1.4.5"
+    "styled-components": "^2.2.1"
   },
   "devDependencies": {
     "react-scripts": "0.9.5"
